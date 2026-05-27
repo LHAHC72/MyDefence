@@ -1,19 +1,30 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyManager : MonoBehaviour
 {
+
+    private Transform target;
+    
     // 시간을 누적할 변수
-    float CurrentTime = 0;
+    float CurrentTime = 3;
 
     // 적 스폰 시간을 조절할 변수
-    public float CreateTime = 1;
+    public float CreateTime = 5;
 
     // 적을 소환하는 공장
     public GameObject enemyFactory;
 
+    // 웨이브를 저장하는 변수
+    private int Wave = 1;
+
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // 태그로 목적지 찾기
+        // target = GameObject.FindGameObjectWithTag("End").transform;
         
     }
 
