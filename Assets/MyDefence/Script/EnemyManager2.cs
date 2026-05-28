@@ -33,7 +33,7 @@ public class EnemyManager2 : MonoBehaviour
 
             enemy.transform.position = transform.position;  // 내 위치에 가져다 놓고
 
-            yield return new WaitForSeconds(0.3f);  // 0.3초의 간격 설정
+            yield return new WaitForSeconds(0.5f);  // 0.5초의 간격 설정
         }
 
         wave++;

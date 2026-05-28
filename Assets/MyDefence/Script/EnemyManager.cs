@@ -16,7 +16,7 @@ public class EnemyManager : MonoBehaviour
     public GameObject enemyFactory;
 
     // 웨이브를 저장하는 변수
-    private int Wave = 1;
+    // private int Wave = 1;
 
     
 

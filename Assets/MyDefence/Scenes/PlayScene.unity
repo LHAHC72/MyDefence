@@ -824,7 +824,7 @@ GameObject:
   - component: {fileID: 2002576811}
   - component: {fileID: 2002576813}
   m_Layer: 0
-  m_Name: EnemyManager
+  m_Name: SpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -873,6 +873,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager2
   enemyFactory: {fileID: 1352478091809797714, guid: 3d7850f242fdf6e409d4cbd82a3100f7, type: 3}
   countDownText: {fileID: 166491356}
+--- !u!1001 &7551067185276116510
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5460701212585161883, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460701212585161883, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460701212585161883, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460701212585161883, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460701212585161883, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460701212585161883, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460701212585161883, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460701212585161883, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460701212585161883, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460701212585161883, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621141300871477748, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+      propertyPath: m_Name
+      value: MachineGunTower
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -885,3 +942,4 @@ SceneRoots:
   - {fileID: 2002576812}
   - {fileID: 888878968}
   - {fileID: 96597841}
+  - {fileID: 7551067185276116510}
