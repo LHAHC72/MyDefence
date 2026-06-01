@@ -824,7 +824,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364038508}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 414b690dec4aa1544b804341e2cff926, type: 3}
   m_Name: 
@@ -832,6 +832,11 @@ MonoBehaviour:
   bulletFactory: {fileID: 3196418091964991480, guid: a94568b61764f22499637c53d16fb863, type: 3}
   CurrentTime: 0
   CreateTime: 1
+--- !u!4 &1364038511 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4480875177394553147, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
+  m_PrefabInstance: {fileID: 7551067185276116510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1806229745 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4548708756311072492, guid: e0bcdd7681ef0b047a5dc62c2deb2386, type: 3}
@@ -849,10 +854,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa43790b2f08d94e89180ba7ca25c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateCannon
-  fireTimer: 1
-  fireCountdown: 0
+  fireCurrentTime: 0
+  fireCreateTime: 1
+  bulletPrefab: {fileID: 3196418091964991480, guid: a94568b61764f22499637c53d16fb863, type: 3}
+  firePoint: {fileID: 1364038511}
   attackRange: 7
-  target: {fileID: 8011321043955948896, guid: 3d7850f242fdf6e409d4cbd82a3100f7, type: 3}
+  target: {fileID: 0}
 --- !u!1 &2002576810
 GameObject:
   m_ObjectHideFlags: 0

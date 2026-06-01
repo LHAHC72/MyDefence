@@ -111,7 +111,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.00001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7532122951700152045
 MonoBehaviour:
@@ -125,4 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b79ffd5ebf09b4aa0b1b27cc929faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletMove
-  speed: 70
+  moveSpeed: 50
+  bulletimpactPrefab: {fileID: 6911610545540456138, guid: 17c3feb89d65cdc48a4de4ac3c3126d8, type: 3}
