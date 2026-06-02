@@ -8,8 +8,16 @@ namespace MySample
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+
+            // 정적맴버변수 사용하기(전역적 접근) :  클래스이름.맴버변수이름
+            StaticClass.number = 20;
+            Debug.Log(StaticClass.number.ToString());
+
+            // 싱글톤 패턴 클래스 인스턴스를 이용하여 맴버변수 사용하기 : 클래스이름.인스턴스이름.맴버변수이름
             SingleTonClass.Instance.number = 10;
             Debug.Log(SingleTonClass.Instance.number.ToString());
+
+           
         }
 
         // Update is called once per frame

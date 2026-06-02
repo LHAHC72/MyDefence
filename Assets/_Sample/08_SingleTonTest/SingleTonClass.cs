@@ -20,9 +20,13 @@ namespace MySample
                 {
                     // 인스턴스 생성
                     instance = new SingleTonClass();
+
+
                 }
                 return instance;
             }
+
+
             
         }
 
@@ -43,6 +47,7 @@ namespace MySample
 
         // 필드: 인스턴스이름.number -> Instance.number
         public int number;
+        
 
 
     }
