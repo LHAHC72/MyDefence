@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 namespace MySample
 {
@@ -27,7 +27,7 @@ namespace MySample
         }
     }
 }
-/*
+*//*
  
  디자인 패턴
  
