@@ -12,8 +12,10 @@ namespace MyDefence
         [Header("Tower Prefabs")]
         // 단순 private 변수가 아니라, 인스펙터에 "새로운 데이터 박스 한 묶음"으로 
         // 바로 생성해서 쓸 수 있도록 new 선언을 해줍니다.
-        [SerializeField] private TowerBlueprint machineGun = new TowerBlueprint();
-        [SerializeField] private TowerBlueprint missail = new TowerBlueprint();
+        [SerializeField] private TowerBlueprint machineGun;
+        [SerializeField] private TowerBlueprint missail;
+        [SerializeField] private TowerBlueprint laser;
+
 
         // 현재 유저가 선택한 타워 프리팹을 저장할 변수
         private TowerBlueprint selectCannon = null;
@@ -64,6 +66,19 @@ namespace MyDefence
             else
                 Debug.LogError("로켓 블루프린트 데이터가 인스펙터에 비어있습니다!");
         }
+
+        public void LaserTower()
+        {
+            // ★ [버그 수정] machineGun 대신 missail 변수를 매칭해 줍니다.
+            selectCannon = laser;
+
+            if (selectCannon != null)
+                Debug.Log($"레이저 타워 선택 성공! 가격: {selectCannon.constructionCost}");
+            else
+                Debug.LogError("레이저 블루프린트 데이터가 인스펙터에 비어있습니다!");
+        }
+
+
 
         /// <summary>
         /// 타일에서 호출하여 실제 타워를 생성하는 함수

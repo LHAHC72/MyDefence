@@ -19,7 +19,7 @@ public class EnemyMove : MonoBehaviour
     void Update()
     {
         // 앞으로 이동
-        transform.Translate(Vector3.forward *  speed * Time.deltaTime);
+        transform.Translate(Vector3.back *  speed * Time.deltaTime);
 
         // 만약 좌표가 도착지보다 작아지면
         if(transform.position.z <= destroyZPosition)
