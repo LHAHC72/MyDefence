@@ -63,6 +63,18 @@ namespace MyDefence
         void ArriveAtTarget()
         {
             //Debug.Log("타겟에 도착 했다");
+
+            //플레이어 라이프 감소 및 게임오버 체크
+            if (GameData.Instance != null)
+            {
+                bool isGameOver = GameData.Instance.LoseLife(1);
+
+                if (isGameOver && UIManager.Instance != null)
+                {
+                    UIManager.Instance.TriggerGameOver();
+                }
+            }
+
             Destroy(this.gameObject);
         }
 

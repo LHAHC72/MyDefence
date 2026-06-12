@@ -53,13 +53,20 @@ public class EnemyManager2 : MonoBehaviour
                 if(countDownText != null)
                 {
                     countDownText.text = $"다음 웨이브까지 {timer:F1}초 남았습니다";
+                    countDownText.text = $"현재 웨이브 {wave}";
                 }
 
                 timer -= Time.deltaTime;
 
                 yield return null;
             }
-        }    
+
+            // 웨이브를 살아서 클리어함
+            if (GameData.Instance != null)
+            {
+                GameData.Instance.AddSurvivedRound();
+            }
+        }
         if(countDownText != null)
         {
             countDownText.text = "모든 웨이브 클리어!";

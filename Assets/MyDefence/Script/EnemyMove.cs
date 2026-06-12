@@ -5,6 +5,7 @@ public class EnemyMove : MonoBehaviour
 {
     // 적의 이동 속도
     public float speed = 1.0f;
+   
 
     // 적의 도착지를 설정하는 변수
     private float destroyZPosition = -17f;
@@ -26,6 +27,8 @@ public class EnemyMove : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("종점 도착!!!");
+            GameData.Instance.LoseLife();
+
         }
 
 
