@@ -14,7 +14,17 @@ public class AnimatorTest
         countdown = 0;
 
         InvokeRepeating("RandomFlameAnimation", 0f, 1f);
-    }   
+    }
+
+    private T GetComponent<T>()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void InvokeRepeating(string v1, float v2, float v3)
+    {
+        throw new System.NotImplementedException();
+    }
 
     public void Update()
     {
