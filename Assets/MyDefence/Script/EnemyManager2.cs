@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using MyDefence;
 
 public class EnemyManager2 : MonoBehaviour
 {
@@ -62,10 +63,7 @@ public class EnemyManager2 : MonoBehaviour
             }
 
             // 웨이브를 살아서 클리어함
-            if (GameData.Instance != null)
-            {
-                GameData.Instance.AddSurvivedRound();
-            }
+            GameData.Waves++;
         }
         if(countDownText != null)
         {

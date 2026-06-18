@@ -1,5 +1,5 @@
-using Unity.Hierarchy;
 using UnityEngine;
+using MyDefence;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -27,7 +27,7 @@ public class EnemyMove : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("종점 도착!!!");
-            GameData.Instance.LoseLife();
+            GameData.UseLife();
 
         }
 

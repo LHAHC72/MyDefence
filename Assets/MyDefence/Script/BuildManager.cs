@@ -93,15 +93,15 @@ namespace MyDefence
             }
 
             // 2. 돈이 충분한지 체크
-            if (GameData.money < selectCannon.constructionCost)
+            if (!GameData.HasGold(selectCannon.constructionCost))
             {
                 Debug.Log("돈이 부족합니다");
                 return;
             }
 
             // 3. 돈이 충분하다면 돈을 지불하고 계산해줍니다.
-            GameData.money -= selectCannon.constructionCost;
-            Debug.Log($"건설하고 남은돈 : {GameData.money}");
+            GameData.UseGold(selectCannon.constructionCost);
+            Debug.Log($"건설하고 남은돈 : {GameData.Gold}");
 
             // 4. 실제로 게임 세상에 타워를 생성합니다.
             Instantiate(selectCannon.towerPrefab, spawnPosition, Quaternion.identity);

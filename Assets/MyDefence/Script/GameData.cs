@@ -1,82 +1,102 @@
 using UnityEngine;
 
-public class GameData : MonoBehaviour
+namespace MyDefence
 {
-  
-
-    public static GameData Instance { get; private set; }
-
-    public int playerLife = 10;
-    // 초기 소지금은 400 Gold로 설정합니다.
-    public static int money = 1000;
-    public int survivedRounds = 0;
-    public GameObject gameover;
-
-
-    public static int Gold => money;
-
-    public static bool HasGold(int amount)
+    /// <summary>
+    /// 게임 데이터 변수를 관리하는 클래스
+    /// 게임머니
+    /// </summary>
+    public class GameData : MonoBehaviour
     {
-        return money >= amount;
-    }
+        #region Variables
+        private static int gold;       //소지금
+        public int startGold = 400;    //초기 소지금
 
-    public static void AddGold(int amount)
-    {
-        money += amount;
-    }
+        private static int lives;                       //생명 갯수
+        [SerializeField] private int startLives = 10;   //초기 생명 갯수
 
-    public static bool UseGold(int amount)
-    {
-        if (!HasGold(amount))
-            return false;
+        private static int waves;       //Wave 카운트
+        #endregion
 
-        money -= amount;
-        return true;
-    }
-
-    // 적이 목적지에 도착했을 때 호출, 라이프가 0 이하가 되면 true(게임오버) 반환
-    public bool LoseLife(int amount = 1)
-    {
-        playerLife -= amount;
-        if(playerLife <=0)
+        #region Property
+        //소지금 읽기 전용 속성
+        public static int Gold
         {
-            playerLife = 0;
-            GameOver(); 
-            return false; // 게임오버
+            get { return gold; }
         }
-        return true;
-    }
 
-    // 한 웨이브를 클리어했을 때 호출
-    public void AddSurvivedRound()
-    {
-        survivedRounds++;
-    }
+        //라이프 읽기 전용 속성
+        public static int Lives => lives;
 
-    public void GameOver()
-    {
-        // 게임오버 처리 (예: 게임오버 UI 활성화)
-        if (gameover != null)
+        //웨이브 카운트
+        public static int Waves
         {
-            gameover.SetActive(true);
+            get { return waves; }
+            set { waves = value; }
         }
-    }
 
+        public static object Instance { get; internal set; }
+        #endregion
 
-
-
-    private void Awake()
-    {
-        // 싱글톤 인스턴스 세팅
-        if (Instance == null)
+        #region Unity Event Method
+        private void Start()
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // 씬이 바뀌어도 파괴되지 않음
+            //초기화
+            gold = startGold;       //초기 소지금을 지급
+            lives = startLives;     //초기 생명 갯수
+            waves = 0;              //웨이브 카운트
+            //Debug.Log($"초기 소지금 {startGold}Gold를 지급하였습니다");
         }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+        #endregion
 
+        #region Custom Method
+        //돈 벌기
+        public static void AddGold(int amount)
+        {
+            gold += amount;
+            //Debug.Log($"현재 소지금: {gold}");
+        }
+
+        //돈 쓰기, 결재 여부를 bool 반환
+        public static bool UseGold(int amount)
+        {
+            //돈 부족 체크
+            if (gold < amount)
+            {
+                //Debug.Log("소지금이 부족합니다");
+                return false;
+            }
+
+            gold -= amount;
+            return true;
+        }
+
+        //소지금 체크, 결재 가능 여부 bool 반환
+        public static bool HasGold(int amount)
+        {
+            return gold >= amount;
+        }
+
+        //생명 추가하기
+        //ToDo : Max Lives 체크
+        public static void AddLife(int amount)
+        {
+            lives += amount;
+        }
+
+        //생명 사용하기
+        public static void UseLife(int amount = 1)
+        {
+            lives -= amount;
+            //Debug.Log($"현재 라이프: {lives}");
+
+            if (lives <= 0)
+            {
+                lives = 0;
+            }
+        }
+        #endregion
+
+
+    }
 }
